@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+header, footer {
+  background-color: #9debf5;
+  padding: 10px;
+}
+
+main {
+  padding: 10px;
+  background-color: silver;
+}
+
+.post {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.post img {
+  margin: 20px;
+}
+
+.footer-columns {
+  display: flex;
+}
+
+.footer-column {
+  flex: 50%;
+  margin: 20px;
+}
+h1, h2, h3, h4, h5 {
+font-family: 'Open Sans' , sans-serif;
+font-weight: 600;
+}
+p {
+font-family: 'Roboto', sans_serif;
+font-weight: 300:
+}
+a{
+font-family: 'Open Sans' , sans_serif;
+font-weight: 680;
+letter-spasing: 2px;
+}
