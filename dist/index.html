@@ -9,79 +9,281 @@
   </head>
     
   <body>
-  <head>
-  <link rel=”apple-touch-icon"  sizes="180x180" href="apple-touch-icon.png">
-    <link rel=”icon" type="imege/png" sizes="32x32" href="">
-     <link rel=”icon" type="imege/png" sizes="16x16" href="">
-     <link rel=”manifest" href="">
-<title>Lego Kids</title>
+  <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <title>Lego Kids</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    
+    header img {
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    
+    header img:hover {
+      transform: scale(1.05) rotate(2deg);
+    }
+    
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    .pos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+    
+    .post {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      transition: all 0.4s ease;
+    }
+    
+    .post:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+    
+    .post img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    
+    .post:hover img {
+      transform: scale(1.05);
+    }
+    
+    .post > div {
+      padding: 25px;
+    }
+    
+    .post h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #ee5a24;
+      margin-bottom: 15px;
+    }
+    
+    .post p {
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+    
+    .post a {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+    
+    .post a:hover {
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    }
+    
+    iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      margin: 20px auto 30px;
+      display: block;
+    }
+    
+    footer {
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      color: white;
+      padding: 50px 20px 30px;
+      margin-top: 50px;
+    }
+    
+    footer > div > div {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    footer img {
+      display: block;
+      margin: 0 auto 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+    
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .footer-column h3 {
+      color: #ff6b6b;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    .footer-column p {
+      line-height: 1.8;
+      color: #bdc3c7;
+    }
+    
+    .footer-column a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-column a:hover {
+      color: #764ba2;
+    }
+    
+    footer small {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      header img {
+        width: 220px !important;
+      }
+      
+      .pos {
+        grid-template-columns: 1fr;
+      }
+      
+      iframe {
+        height: 300px;
+      }
+      
+      .post h3 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
-
-<header>
+<body>
+  <header>
     <img src="https://i.postimg.cc/bJptxPg6/transformed.png" width="290" draggable="false" alt="Logo">
-</header>
-<main>
-  <div class="pos">
-    <div class="post">
-      <img height="230" src="https://i.postimg.cc/QxfCP5bJ/2023-06-24-22-43-17.png" alt="Card image cap">
-      <div>
-        <h3>Соник Супер-ежик</h3>
-        <p>
-          Откройте для себя один из самых запоминающихся уровней видеоигр: легендарные Зеленые холмы ежика Соника. Знакомые персонажи — минифигурка ежа Соника LEGO®, а также фигурки доктора Эггмана со сборным эггмобилем, мотожука с двумя вариантами лица и крабмита.
-        </p>
-        <a href="#">Подробнее</a>
+  </header>
+  
+  <main>
+    <div class="pos">
+      <div class="post">
+        <img height="230" src="https://i.postimg.cc/QxfCP5bJ/2023-06-24-22-43-17.png" alt="Соник Супер-ежик">
+        <div>
+          <h3>Соник Супер-ежик</h3>
+          <p>
+            Откройте для себя один из самых запоминающихся уровней видеоигр: легендарные Зеленые холмы ежика Соника. Знакомые персонажи — минифигурка ежа Соника LEGO, а также фигурки доктора Эггмана со сборным эггмобилем, мотожука с двумя вариантами лица и крабмита.
+          </p>
+          <a href="#">Подробнее</a>
+        </div>
+      </div>
+      
+      <div class="post">
+        <img height="280" src="https://i.postimg.cc/CKQ66vBp/2023-06-24-22-49-33.png" alt="Супер Марио">
+        <div>
+          <h3>Супер Марио</h3>
+          <p>
+            Объединитесь в команду для новых приключений с Марио. Самое классное в LEGO Супер Марио то, что вы можете собирать и перестраивать свои приключения так, как только захотите! Это идеальный способ для семьи или друзей вместе провести время за творческой игрой.
+          </p>
+          <a href="#">Подробнее</a>
+        </div>
+      </div>
+      
+      <div class="post">
+        <img height="270" src="https://i.postimg.cc/Y0f5V6BN/2023-06-24-23-03-09.png" alt="Винни Пух">
+        <div>
+          <h3>Винни Пух</h3>
+          <p>
+            Устройте себе время отдыха и вновь переживите радостные детские воспоминания с этим набором LEGO. В нем вас ждет Винни Пух и чудесная модель из кубиков: домик Винни Пуха под большим дубом в Зачарованном лесу. В набор входят минифигурки Винни Пуха, Пятачка, Тигры и Кролика, а также фигурка ослика Иа.
+          </p>
+          <a href="#">Подробнее</a>
+        </div>
       </div>
     </div>
-    <div class="post">
-      <img height="280" src="https://i.postimg.cc/CKQ66vBp/2023-06-24-22-49-33.png" alt="Card image cap">
-      <div>
-        <h3>Супер Марио</h3>
-        <p>
-          Объединитесь в команду для новых приключений с Марио. Самое классное в LEGO® Супер Марио то, что вы можете собирать и перестраивать свои приключения так, как только захотите! Это идеальный способ для семьи или друзей вместе провести время за творческой игрой.
-        </p>
-        <a href="#">Подробнее</a>
-      </div>
-    </div>
-    <div class="post">
-      <img height="270" src="https://i.postimg.cc/Y0f5V6BN/2023-06-24-23-03-09.png" alt="Card image cap">
-      <div>
-        <h3>Винни Пух</h3>
-        <p>
-          Устройте себе время отдыха и вновь переживите радостные детские воспоминания с этим набором LEGO®. В нем вас ждет Винни Пух и чудесная модель из кубиков: домик Винни Пуха под большим дубом в Зачарованном лесу. В набор входят минифигурки Винни Пуха, Пятачка, Тигры и Кролика, а также фигурка ослика Иа.
-        </p>
-        <a href="#">Подробнее</a>
-      </div>
-    </div>
-  </div>
-<iframe src="https://vkvideo.ru/video_ext.php?oid=-61911646&id=456241044&hd=4" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe><iframe src="https://vkvideo.ru/video_ext.php?oid=-61911646&id=456241184&hd=4" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe><iframe src="https://vkvideo.ru/video_ext.php?oid=-61911646&id=456241179&hd=4" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe><iframe src="https://vkvideo.ru/video_ext.php?oid=-61911646&id=456241176&hd=4" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe><iframe src="https://vkvideo.ru/video_ext.php?oid=-61911646&id=456241186&hd=4" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
-</main>
-<footer>
-  <div>
+    
+    <iframe src="https://vkvideo.ru/video_ext.php?oid=-61911646&id=456241044&hd=4" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+    <iframe src="https://vkvideo.ru/video_ext.php?oid=-61911646&id=456241184&hd=4" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+    <iframe src="https://vkvideo.ru/video_ext.php?oid=-61911646&id=456241179&hd=4" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+    <iframe src="https://vkvideo.ru/video_ext.php?oid=-61911646&id=456241176&hd=4" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+    <iframe src="https://vkvideo.ru/video_ext.php?oid=-61911646&id=456241186&hd=4" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+  </main>
+  
+  <footer>
     <div>
       <div>
-        <img src="https://i.postimg.cc/bJptxPg6/transformed.png" alt="Logo" width="250">
-      </div>
-      <div class="footer-columns">
-        <div class="footer-column">
-          <h3>О нас</h3>
-          <p>
-            Пока дети строят свои собственные миры из кубиков LEGO, мы играем свою роль в том, чтобы оказывать положительное влияние на мир, в котором они живут сегодня и который унаследуют в будущем.
-          </p>
+        <div>
+          <img src="https://i.postimg.cc/bJptxPg6/transformed.png" alt="Logo" width="250">
         </div>
-        <div class="footer-column">
-          <h3>Свяжитесь с нами</h3>
-          <p>
-            Если вы заинтересованы в работе со мной или просто хотите поздороваться, просто напишите по электронной почте.
-            <br><strong>Email: <a href="#">contact@mail.com</a></strong>
-          </p>
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h3>О нас</h3>
+            <p>
+              Пока дети строят свои собственные миры из кубиков LEGO, мы играем свою роль в том, чтобы оказывать положительное влияние на мир, в котором они живут сегодня и который унаследуют в будущем.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h3>Свяжитесь с нами</h3>
+            <p>
+              Если вы заинтересованы в работе со мной или просто хотите поздороваться, просто напишите по электронной почте.
+              <br><strong>Email: <a href="#">contact@mail.com</a></strong>
+            </p>
+          </div>
         </div>
       </div>
+      <center>
+        <small>Copyright &copy; 2025</small>
+      </center>
     </div>
-    <center>
-      <small>Copyright &copy; 2025</small>
-    </center>
-  </div>
-</footer>
+  </footer>
+</body>
+</html>
     
   </body>
   
